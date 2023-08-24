@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader, random_split
 from sklearn.preprocessing import FunctionTransformer
 
 
-def prepare_nn_mint_data(settings):
+def prepare_data(settings):
     file_path = settings.MINT.data_path
     emulator_data = MintDataset(input_file=file_path)
     test_pct = settings.neural_net.test_pct
