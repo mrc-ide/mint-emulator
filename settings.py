@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field, InitVar
+import torch
 import os
 
 @dataclass
@@ -8,10 +9,11 @@ class MINTData:
 
 @dataclass
 class Execution:
+    device: str = "cuda"#cuda" if torch.cuda.is_available() else "cpu"  # Set device to GPU if available, otherwise CPU
     source: str = "MINT"  # Source of the data: "MINT" or "ABM"
     max_workers: int = 16  # Maximum number of workers for ProcessPoolExecutor
     random_seed: int = 42  # Seed for random number generator to ensure reproducibility
-    cached_model: bool = False  # Use a saved trained model (WARNING: If set to "True" and no cached model is detected, the training program will run)
+    cached_model: bool = True  # Use a saved trained model (WARNING: If set to "True" and no cached model is detected, the training program will run)
 
 @dataclass
 class LrScheduler:

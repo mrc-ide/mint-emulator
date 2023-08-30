@@ -5,6 +5,9 @@ import torch.optim as optim
 from training import train_model
 from utils import select_model, check_model_exists
 from plotting import plot_losses
+from settings import Settings
+
+settings = Settings()
 
 def initialize_model(settings):
     return select_model(settings)
@@ -13,8 +16,8 @@ def load_pretrained_model(model, model_type, source):
     sub_folder = f"{source}_models"
     model_path = os.path.join("cached_models", sub_folder, f"{source}_{model_type}model.pth")
     if os.path.exists(model_path):
-        model.load_state_dict(torch.load(model_path))
-    return model
+        model.load_state_dict(torch.load(model_path, map_location=settings.execution.device))
+    return model.to(settings.execution.device)
 
 
 def train_and_save_model(model, train_loader, val_loader, settings):
@@ -40,7 +43,7 @@ def train_and_save_model(model, train_loader, val_loader, settings):
     return model
 
 def handle_model(train_loader, val_loader, settings):
-    model = initialize_model(settings)
+    model = initialize_model(settings).to(settings.execution.device)
 
     # Check and create the parent folder if not exists
     if not os.path.exists("cached_models"):

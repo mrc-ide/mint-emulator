@@ -15,11 +15,14 @@ def train_model(model, criterion, optimizer, train_loader, val_loader, settings)
 
     train_losses = []
     val_losses = []
-
+    
+    model = model.to(settings.execution.device)
     for epoch in progress_bar:
         total_train_loss = 0
         total_train_batches = 0
         for inputs, targets in train_loader:
+            inputs = inputs.to(settings.execution.device)
+            targets = targets.to(settings.execution.device)
             optimizer.zero_grad()
             outputs = model(inputs)
             loss = criterion(outputs, targets)
