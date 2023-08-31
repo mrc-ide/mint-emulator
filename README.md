@@ -132,7 +132,6 @@ The `plotting` module provides functionalities to visualize and compare the mode
 4. `plot_mint_avg_time_series(predictions, actual, settings)`: Plots time series data of average actual versus average predicted values with options to display random trajectories.
 5. `plot_losses(train_losses, val_losses)`: Visualizes the loss progression during training and validation across epochs.
 
----
 
 <!-- --- -->
 
