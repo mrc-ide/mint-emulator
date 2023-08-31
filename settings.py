@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field, InitVar
+import torch
 import os
 
 @dataclass
@@ -8,6 +9,7 @@ class MINTData:
 
 @dataclass
 class Execution:
+    device: str = "cuda:0"#cuda" if torch.cuda.is_available() else "cpu"  # Set device to GPU if available, otherwise CPU
     source: str = "MINT"  # Source of the data: "MINT" or "ABM"
     max_workers: int = 16  # Maximum number of workers for ProcessPoolExecutor
     random_seed: int = 42  # Seed for random number generator to ensure reproducibility
@@ -28,7 +30,7 @@ class NeuralNet:
     lr_scheduler: LrScheduler = LrScheduler()  # Learning rate scheduler settings
     dropout_prob: float = 0.5  # Dropout probability
     shuffle: bool = True  # If True, shuffles the data in DataLoader
-    num_workers: int = 0  # Number of workers to use for loading data in DataLoader
+    num_workers: int = 16  # Number of workers to use for loading data in DataLoader
     test_pct: float = 0.2  # Fraction of data used for testing
     val_pct: float = 0.2  # Fraction of data used for validation
     input_size: int = 20  # Number of input neurons

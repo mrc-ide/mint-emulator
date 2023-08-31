@@ -17,6 +17,6 @@ class MintDataset(Dataset):
 
     def __getitem__(self, idx):
         row = self.frame.iloc[idx]
-        input_vals = torch.tensor(np.array(row[0:self.nParams]), dtype=torch.float32)
-        output_vals = torch.tensor(np.array(row[self.nParams:]), dtype=torch.float32)
+        input_vals = torch.tensor(np.array(row[0:self.nParams]), dtype=torch.float32).to(settings.execution.device)
+        output_vals = torch.tensor(np.array(row[self.nParams:]), dtype=torch.float32).to(settings.execution.device)
         return input_vals, output_vals
