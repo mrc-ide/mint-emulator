@@ -20,11 +20,11 @@ The MINT Emulator is a package designed to emulate prevalence data. The current 
 	- [🔗 Dependencies and Libraries ](#-dependencies-and-libraries-)
 	- [💡 Hyperparameter Tuning ](#-hyperparameter-tuning-)
 		- [Key Hyperparameters:](#key-hyperparameters)
-	- [🚧 Error Handling and Logging ](#-error-handling-and-logging-)
-	- [💼 Use Cases and Examples ](#-use-cases-and-examples-)
+	- [📊 Plotting and Visualization ](#-plotting-and-visualization-)
 	- [⚙️ Settings ](#️-settings-)
 	- [🔧 Utilities ](#-utilities-)
-	- [📊 Plotting and Visualization ](#-plotting-and-visualization-)
+	- [🚧 Error Handling and Logging ](#-error-handling-and-logging-)
+	- [💼 Use Cases and Examples ](#-use-cases-and-examples-)
 	- [💌 Feedback and Contribution ](#-feedback-and-contribution-)
 
 ---
@@ -122,33 +122,23 @@ Adjusting hyperparameters is crucial to obtain optimal performance from the mode
 Hyperparameters can be adjusted in the `settings` module.
 
 ---
+## 📊 Plotting and Visualization <a name="plotting-and-visualization-placeholder"></a>
+
+The `plotting` module provides functionalities to visualize and compare the model's predictions with actual data:
+
+1. `plot_mint_compare(predictions, actual, settings, num_samples=9)`: Displays scatter plots comparing actual versus predicted values for randomly chosen time series samples.
+2. `plot_mint_time_series(predictions, actual, settings, num_samples=9)`: Visualizes the time series of the actual versus predicted values for random samples.
+3. `plot_mint_avg_compare(predictions, actual, settings)`: Presents a scatter plot of average actual versus average predicted values.
+4. `plot_mint_avg_time_series(predictions, actual, settings)`: Plots time series data of average actual versus average predicted values with options to display random trajectories.
+5. `plot_losses(train_losses, val_losses)`: Visualizes the loss progression during training and validation across epochs.
+
+---
+
+<!-- --- -->
 
 <!-- ## 📖 Documentation and Comments <a name="documentation-and-comments"></a>
 Every function, method, and class within the MINT Emulator package is accompanied by detailed docstrings that follow the [Google Python Style Guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md). This makes it easy for developers and users to understand the purpose, parameters, and return values of each code section.
  -->
-
----
-
-## 🚧 Error Handling and Logging <a name="error-handling-and-logging"></a>
-To ensure smooth operation, the MINT Emulator package incorporates error handling for common issues like:
-
-- Missing data files
-- Incompatible data formats
-- Model mismatch issues (e.g., trying to load a GRU model for an LSTM setup)
-
-In addition, a logging system is in place to provide detailed feedback during execution. Logs help in debugging and understanding the flow of the program.
-
----
-
-## 💼 Use Cases and Examples <a name="use-cases-and-examples"></a>
-For users unfamiliar with the MINT Emulator package, there are example scripts and use-cases provided to demonstrate:
-
-- How to set up data
-- How to initialize and train a model
-- How to run predictions on new data
-- How to visualize the results
-
-Each example comes with detailed comments and explanations, making it easier for users to adapt and build upon these scripts for their own projects.
 
 ---
 
@@ -175,18 +165,30 @@ The `utils` module consists of helper functions designed to aid in data and mode
 4. `attach_identifier(data)`: Attaches an identifier to data which is a list of numpy arrays.
 
 ---
+## 🚧 Error Handling and Logging <a name="error-handling-and-logging"></a>
+To ensure smooth operation, the MINT Emulator package incorporates error handling for common issues like:
 
-## 📊 Plotting and Visualization <a name="plotting-and-visualization-placeholder"></a>
+- Missing data files
+- Incompatible data formats
+- Model mismatch issues (e.g., trying to load a GRU model for an LSTM setup)
 
-The `plotting` module provides functionalities to visualize and compare the model's predictions with actual data:
-
-1. `plot_mint_compare(predictions, actual, settings, num_samples=9)`: Displays scatter plots comparing actual versus predicted values for randomly chosen time series samples.
-2. `plot_mint_time_series(predictions, actual, settings, num_samples=9)`: Visualizes the time series of the actual versus predicted values for random samples.
-3. `plot_mint_avg_compare(predictions, actual, settings)`: Presents a scatter plot of average actual versus average predicted values.
-4. `plot_mint_avg_time_series(predictions, actual, settings)`: Plots time series data of average actual versus average predicted values with options to display random trajectories.
-5. `plot_losses(train_losses, val_losses)`: Visualizes the loss progression during training and validation across epochs.
+In addition, a logging system is in place to provide detailed feedback during execution. Logs help in debugging and understanding the flow of the program.
 
 ---
+
+## 💼 Use Cases and Examples <a name="use-cases-and-examples"></a>
+For users unfamiliar with the MINT Emulator package, there are example scripts and use-cases provided to demonstrate:
+
+- How to set up data
+- How to initialize and train a model
+- How to run predictions on new data
+- How to visualize the results
+
+Each example comes with detailed comments and explanations, making it easier for users to adapt and build upon these scripts for their own projects.
+
+---
+
+
 
 ## 💌 Feedback and Contribution <a name="feedback-and-contribution"></a>
 Feedback is crucial for the growth and improvement of the MINT Emulator. Users are encouraged to:
