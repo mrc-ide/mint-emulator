@@ -20,13 +20,12 @@ The MINT Emulator is a package designed to emulate prevalence data. The current 
 	- [🔗 Dependencies and Libraries ](#-dependencies-and-libraries-)
 	- [💡 Hyperparameter Tuning ](#-hyperparameter-tuning-)
 		- [Key Hyperparameters:](#key-hyperparameters)
-	- [📖 Documentation and Comments ](#-documentation-and-comments-)
 	- [🚧 Error Handling and Logging ](#-error-handling-and-logging-)
 	- [💼 Use Cases and Examples ](#-use-cases-and-examples-)
-	- [💌 Feedback and Contribution ](#-feedback-and-contribution-)
 	- [⚙️ Settings ](#️-settings-)
 	- [🔧 Utilities ](#-utilities-)
 	- [📊 Plotting and Visualization ](#-plotting-and-visualization-)
+	- [💌 Feedback and Contribution ](#-feedback-and-contribution-)
 
 ---
 
@@ -124,9 +123,9 @@ Hyperparameters can be adjusted in the `settings` module.
 
 ---
 
-## 📖 Documentation and Comments <a name="documentation-and-comments"></a>
+<!-- ## 📖 Documentation and Comments <a name="documentation-and-comments"></a>
 Every function, method, and class within the MINT Emulator package is accompanied by detailed docstrings that follow the [Google Python Style Guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md). This makes it easy for developers and users to understand the purpose, parameters, and return values of each code section.
-
+ -->
 
 ---
 
@@ -150,17 +149,6 @@ For users unfamiliar with the MINT Emulator package, there are example scripts a
 - How to visualize the results
 
 Each example comes with detailed comments and explanations, making it easier for users to adapt and build upon these scripts for their own projects.
-
----
-
-## 💌 Feedback and Contribution <a name="feedback-and-contribution"></a>
-Feedback is crucial for the growth and improvement of the MINT Emulator. Users are encouraged to:
-
-- Report bugs and issues
-- Suggest new features or improvements
-- Contribute to the codebase
-
-Details for contributing and contact information can be found in the `CONTRIBUTING.md` and `README.md` files respectively.
 
 ---
 
@@ -200,3 +188,13 @@ The `plotting` module provides functionalities to visualize and compare the mode
 
 ---
 
+## 💌 Feedback and Contribution <a name="feedback-and-contribution"></a>
+Feedback is crucial for the growth and improvement of the MINT Emulator. Users are encouraged to:
+
+- Report bugs and issues
+- Suggest new features or improvements
+- Contribute to the codebase
+
+Details for contributing and contact information can be found in the `CONTRIBUTING.md` and `README.md` files respectively.
+
+---
