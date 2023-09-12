@@ -196,6 +196,4 @@ Feedback is crucial for the growth and improvement of the MINT Emulator. Users a
 - Suggest new features or improvements
 - Contribute to the codebase
 
-Details for contributing and contact information can be found in the `CONTRIBUTING.md` and `README.md` files respectively.
-
 ---
