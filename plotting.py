@@ -12,7 +12,9 @@ def plot_mint_compare(predictions, actual, settings, num_samples=9):
     flattened_actual = np.concatenate(actual, axis=0)
 
     # Select random row indices
+    np.random.seed(0) # you can set any integer value
     row_indices = np.random.choice(flattened_predictions.shape[0], size=num_samples, replace=False)
+
 
     # Create a 3x3 grid of scatter plots
     fig, axs = plt.subplots(3, 3, figsize=(15, 15))
@@ -41,7 +43,9 @@ def plot_mint_time_series(predictions, actual, settings, num_samples=9):
     flattened_actual = np.concatenate(actual, axis=0)
 
     # Select random row indices
+    np.random.seed(0) # you can set any integer value
     row_indices = np.random.choice(flattened_predictions.shape[0], size=num_samples, replace=False)
+
 
     # Create a 3x3 grid of time series plots
     fig, axs = plt.subplots(3, 3, figsize=(15, 15))
@@ -161,10 +165,22 @@ def plot_mint_avg_time_series(predictions, actual, settings):
 
     plt.show()
     
-def plot_losses(train_losses, val_losses):
-    plt.plot(train_losses, label="Training Loss")
-    plt.plot(val_losses, label="Validation Loss")
+def plot_losses(train_losses, val_losses, settings):
+    # Extracting model_type from the settings
+    model_type = settings.neural_net.model_type
+    
+    # Plotting the training and validation losses with updated aesthetics
+    plt.figure(figsize=(10, 7))  # Set the figure size
+    plt.plot(train_losses, color="darkred", linestyle="-", label="Training Loss")
+    plt.plot(val_losses, color="steelblue", linestyle="--", label="Validation Loss")
+    
+    # Setting labels, title, and legend
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
+    plt.title(f"Training and Validation Losses for {model_type} Model")
     plt.legend()
+    
+    # Display the plot
+    plt.grid(True, which='both', linestyle='--', linewidth=0.5)  # Add a grid for better readability
+    plt.tight_layout()  # Ensure that all elements fit within the figure space
     plt.show()
